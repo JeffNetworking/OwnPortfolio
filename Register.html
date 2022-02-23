@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $.ajax({
+        type:'GET',
+        url:'https://localhost:5001/Items',
+        dataType:"JSON",
+        data:JSON.stringify({ }),
+        success:function(data){
+            $('.messages').append("<li>"+JSON.stringify(data)+"</li>")
+        }
+    })
+  });
+});
+</script>
+</head>
+<body>
+
+<h2>This is a heading</h2>
+
+<ul class ='messages'></ul>
+
+<button>Click me</button>
+
+</body>
+</html>
